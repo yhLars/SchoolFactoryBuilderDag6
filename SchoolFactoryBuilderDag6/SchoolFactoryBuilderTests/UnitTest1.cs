@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SchoolBuilder.Lib;
 
 namespace SchoolFactoryBuilderTests
 {
@@ -7,8 +8,23 @@ namespace SchoolFactoryBuilderTests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test_Jensen_Education()
         {
+            //Arrange
+            //JensenEducation expected= new JensenEducation();
+            //expected.EducationName = "Jensen";
+            string expected = "Jensen";
+            EducationBuilder jensenBuilder = new JensenBuilder();
+
+            JensenDirector jensenDirector = new JensenDirector();
+
+            //Act
+
+            IEducation acctual = jensenDirector.Build(jensenBuilder);
+            
+
+            //Assert
+            Assert.AreEqual(expected,acctual.EducationName);
         }
     }
 }
