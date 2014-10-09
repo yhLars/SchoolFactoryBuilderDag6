@@ -13,18 +13,25 @@ namespace SchoolFactoryBuilderTests
             //Arrange
             //JensenEducation expected= new JensenEducation();
             //expected.EducationName = "Jensen";
-            string expected = "Jensen";
-            EducationBuilder jensenBuilder = new JensenBuilder();
+            string expectedEducationName = "Jensen";
+            string expectedTeacher = "Ellie";
+            string expectedStudents = "Samir";
+            string expectedFeedBack = "Perfekt";
 
-            JensenDirector jensenDirector = new JensenDirector();
+            AbstractEducation education = new JensenEducation("Ellie", "Samir", "Perfekt");
+            EducationBuilder builder = new JensenBuilder(education);
+            EducationDirector director = new JensenDirector();
 
             //Act
 
-            IEducation acctual = jensenDirector.Build(jensenBuilder);
+            IEducation actual = director.Build(builder);
             
 
             //Assert
-            Assert.AreEqual(expected,acctual.EducationName);
+            Assert.AreEqual(expectedEducationName, actual.EducationName);
+            Assert.AreEqual(expectedTeacher, actual.AssignTeacher);
+            Assert.AreEqual(expectedStudents, actual.InviteStudents);
+            Assert.AreEqual(expectedFeedBack, actual.ProcessStudentFeedback);
         }
     }
 }

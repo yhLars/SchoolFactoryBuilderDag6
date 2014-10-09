@@ -8,9 +8,9 @@ namespace SchoolBuilder.Lib
 {
     public abstract class EducationBuilder
     {
-        public virtual void AssignTeacher(){}
-        public virtual void InviteStudents() { }
-        public virtual void ProcessStudentFeedback() { }
+        public virtual void AssignTeacher(string teacher) { }
+        public virtual void InviteStudents(string student) { }
+        public virtual void ProcessStudentFeedback(string feedback) { }
 
         public abstract IEducation Education { get; }
 

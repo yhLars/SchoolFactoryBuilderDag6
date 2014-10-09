@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace SchoolBuilder.Lib
 {
-    public class JensenEducation :IEducation
+    public class JensenEducation : AbstractEducation
     {
-         public string EducationName { get; set; }
-
-        public JensenEducation()
+        public JensenEducation(string assignTeacher, string inviteStudents, string processStudentFeedback)
+            : base("Jensen", assignTeacher, inviteStudents, processStudentFeedback)
         {
-            EducationName = "Jensen";
         }
     }
 }

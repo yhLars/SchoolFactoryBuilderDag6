@@ -8,14 +8,31 @@ namespace SchoolBuilder.Lib
 {
     public class JensenBuilder:EducationBuilder
     {
-        public override IEducation Education
+        private AbstractEducation jensenEducationInProgress;
+
+        public JensenBuilder(AbstractEducation education)
         {
-            get { return new JensenEducation(); }
+            jensenEducationInProgress = education;
         }
 
-        public override void AssignTeacher(){}
-        public override void InviteStudents() { }
-        public override void ProcessStudentFeedback() { }
+        public override void AssignTeacher(string teacher)
+        {
+            jensenEducationInProgress.AssignTeacher = teacher;
+        }
+
+        public override void InviteStudents(string student)
+        {
+            jensenEducationInProgress.InviteStudents = student;
+        }
+
+        public override void ProcessStudentFeedback(string feedback)
+        {
+            jensenEducationInProgress.ProcessStudentFeedback = feedback;
+        }
+
+        public override IEducation Education
+        {
+            get { return jensenEducationInProgress; }
+        }
     } 
-   
 }

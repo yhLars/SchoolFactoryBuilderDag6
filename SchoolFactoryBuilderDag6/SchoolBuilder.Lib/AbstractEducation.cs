@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace SchoolBuilder.Lib
 {
-    public class NackademinEducation:IEducation
+    public abstract class AbstractEducation : IEducation
     {
         private string _educationName;
         private string _assignTeacher;
         private string _inviteStudents;
         private string _processStudentFeedback;
+
+        public AbstractEducation(string educationName, string assignTeacher, string inviteStudents, string processStudentFeedback)
+        {
+            _educationName = educationName;
+            _assignTeacher = assignTeacher;
+            _inviteStudents = inviteStudents;
+            _processStudentFeedback = processStudentFeedback;
+        }
 
         public string EducationName
         {
