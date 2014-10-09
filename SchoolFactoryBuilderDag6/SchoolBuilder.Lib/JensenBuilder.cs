@@ -17,17 +17,17 @@ namespace SchoolBuilder.Lib
 
         public override void AssignTeacher(string teacher)
         {
-            jensenEducationInProgress.AssignTeacher = teacher;
+            jensenEducationInProgress.TeacherName = teacher;
         }
 
         public override void InviteStudents(string student)
         {
-            jensenEducationInProgress.InviteStudents = student;
+            jensenEducationInProgress.Student = student;
         }
 
         public override void ProcessStudentFeedback(string feedback)
         {
-            jensenEducationInProgress.ProcessStudentFeedback = feedback;
+            jensenEducationInProgress.Feedback = feedback;
         }
 
         public override IEducation Education

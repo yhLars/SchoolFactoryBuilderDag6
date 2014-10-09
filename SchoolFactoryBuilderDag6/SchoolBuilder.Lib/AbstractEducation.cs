@@ -26,19 +26,19 @@ namespace SchoolBuilder.Lib
             get { return _educationName; }
         }
 
-        public string AssignTeacher
+        public string TeacherName
         {
             get { return _assignTeacher; }
             set { _assignTeacher = value; }
         }
 
-        public string InviteStudents
+        public string Student
         {
             get { return _inviteStudents; }
             set { _inviteStudents = value; }
         }
 
-        public string ProcessStudentFeedback
+        public string Feedback
         {
             get { return _processStudentFeedback; }
             set { _processStudentFeedback = value; }

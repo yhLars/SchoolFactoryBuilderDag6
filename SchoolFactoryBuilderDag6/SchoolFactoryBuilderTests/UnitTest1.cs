@@ -23,15 +23,37 @@ namespace SchoolFactoryBuilderTests
             EducationDirector director = new JensenDirector();
 
             //Act
-
             IEducation actual = director.Build(builder);
             
 
             //Assert
             Assert.AreEqual(expectedEducationName, actual.EducationName);
-            Assert.AreEqual(expectedTeacher, actual.AssignTeacher);
-            Assert.AreEqual(expectedStudents, actual.InviteStudents);
-            Assert.AreEqual(expectedFeedBack, actual.ProcessStudentFeedback);
+            Assert.AreEqual(expectedTeacher, actual.TeacherName);
+            Assert.AreEqual(expectedStudents, actual.Student);
+            Assert.AreEqual(expectedFeedBack, actual.Feedback);
+        }
+
+        [TestMethod]
+        public void Test_Nackademin_Education()
+        {
+            //Arrange
+            string expectedEducationName = "Nackademin";
+            string expectedTeacher = "Ellie";
+            string expectedStudents = "Samir";
+            string expectedFeedBack = "SiSåDär";
+            
+            AbstractEducation education = new NackademinEducation("Ellie","Samir","SiSåDär");
+            EducationBuilder builder = new NackademinBuilder(education);
+            NackademinDirector director = new NackademinDirector();
+            
+            //Act
+            IEducation actual = director.Build(builder);
+
+            //Assert
+            Assert.AreEqual(expectedEducationName,actual.EducationName);
+            Assert.AreEqual(expectedTeacher, actual.TeacherName);
+            Assert.AreEqual(expectedStudents, actual.Student);
+            Assert.AreEqual(expectedFeedBack, actual.Feedback);
         }
     }
 }

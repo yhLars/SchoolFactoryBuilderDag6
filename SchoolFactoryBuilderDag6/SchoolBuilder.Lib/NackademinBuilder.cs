@@ -8,10 +8,31 @@ namespace SchoolBuilder.Lib
 {
     public class NackademinBuilder: EducationBuilder
     {
+        private AbstractEducation _educationInPogress;
+
+        public NackademinBuilder(AbstractEducation education)
+        {
+            _educationInPogress = education;
+        }
 
         public override IEducation Education
         {
-            get { throw new NotImplementedException(); }
+            get { return _educationInPogress; }
+        }
+
+        public override void AssignTeacher(string teacher)
+        {
+            _educationInPogress.TeacherName = teacher;
+        }
+
+        public override void InviteStudents(string student)
+        {
+            _educationInPogress.Student = student;
+        }
+
+        public override void ProcessStudentFeedback(string feedback)
+        {
+            _educationInPogress.Feedback = feedback;
         }
     }
 }

@@ -10,8 +10,8 @@ namespace SchoolBuilder.Lib
     public interface IEducation
     {
         string EducationName { get; }
-        string AssignTeacher { get; set; }
-        string InviteStudents { get; set; }
-        string ProcessStudentFeedback { get; set; }
+        string TeacherName { get; set; }
+        string Student { get; set; }
+        string Feedback { get; set; }
     }
 }
