@@ -55,5 +55,24 @@ namespace SchoolFactoryBuilderTests
             Assert.AreEqual(expectedStudents, actual.Student);
             Assert.AreEqual(expectedFeedBack, actual.Feedback);
         }
+
+        [TestMethod]
+        public void Test_Kth_Education()
+        {
+            //Arrange
+            string expectedEducationName = "KTH";
+            string expectedTeacher = "Ellie";
+            string expectedStudents = "Samir";
+            string expectedFeedBack = "Perfect";
+
+            AbstractEducation education = new KthEducation("Ellie","Samir","Perfect");
+            EducationBuilder builder = new KthBuilder(education);
+            EducationDirector director = new KthDirector();
+            //Act
+            IEducation actual = director.Build(builder);
+            //Assert
+
+            Assert.AreEqual(expectedEducationName,actual.EducationName);
+        }
     }
 }

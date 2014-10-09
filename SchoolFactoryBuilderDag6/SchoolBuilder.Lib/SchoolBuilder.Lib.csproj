@@ -46,6 +46,9 @@
     <Compile Include="JensenBuilder.cs" />
     <Compile Include="JensenDirector.cs" />
     <Compile Include="JensenEducation.cs" />
+    <Compile Include="KthBuilder.cs" />
+    <Compile Include="KthDirector.cs" />
+    <Compile Include="KthEducation.cs" />
     <Compile Include="NackademinBuilder.cs" />
     <Compile Include="NackademinDirector.cs" />
     <Compile Include="NackademinEducation.cs" />
